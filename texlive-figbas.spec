@@ -1,3 +1,9 @@
+# revision 21037
+# category Package
+# catalog-ctan /fonts/figbas
+# catalog-date 2009-05-20 15:30:38 +0200
+# catalog-license lppl
+# catalog-version 1.0
 Name:		texlive-figbas
 Version:	1.0
 Release:	1
@@ -46,6 +52,7 @@ Palatino/Palladio, respectively.
 %{_texmfdistdir}/fonts/type1/public/figbas/cmrj.pfb
 %{_texmfdistdir}/fonts/type1/public/figbas/cmssj.pfb
 %{_texmfdistdir}/fonts/type1/public/figbas/plrj.pfb
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -56,3 +63,5 @@ Palatino/Palladio, respectively.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
