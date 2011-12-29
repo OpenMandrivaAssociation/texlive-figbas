@@ -16,7 +16,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
 
 %description
 This package consists of three mini-fonts (and associated
@@ -25,20 +24,12 @@ notations 2+, 4+, 5+, 6+ and 9+ in music manuscripts. The fonts
 are usable with Computer Modern Roman and Sans, and
 Palatino/Palladio, respectively.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -53,7 +44,6 @@ Palatino/Palladio, respectively.
 %{_texmfdistdir}/fonts/type1/public/figbas/cmrj.pfb
 %{_texmfdistdir}/fonts/type1/public/figbas/cmssj.pfb
 %{_texmfdistdir}/fonts/type1/public/figbas/plrj.pfb
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -64,5 +54,3 @@ Palatino/Palladio, respectively.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
