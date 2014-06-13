@@ -6,7 +6,7 @@
 # catalog-version 1.0.3
 Name:		texlive-figbas
 Version:	1.0.3
-Release:	5
+Release:	6
 Summary:	Mini-fonts for figured-bass notation in music
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/figbas
