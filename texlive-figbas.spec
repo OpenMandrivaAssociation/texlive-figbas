@@ -1,18 +1,12 @@
-# revision 28943
-# category Package
-# catalog-ctan /fonts/figbas
-# catalog-date 2012-08-15 13:45:23 +0200
-# catalog-license lppl
-# catalog-version 1.0.3
 Name:		texlive-figbas
-Version:	1.0.3
-Release:	10
+Version:	28943
+Release:	1
 Summary:	Mini-fonts for figured-bass notation in music
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/figbas
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/figbas.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/figbas.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/figbas.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/figbas.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ are usable with Computer Modern Roman and Sans, and
 Palatino/Palladio, respectively.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -53,7 +47,7 @@ Palatino/Palladio, respectively.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
