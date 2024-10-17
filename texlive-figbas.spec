@@ -3,7 +3,7 @@ Version:	28943
 Release:	2
 Summary:	Mini-fonts for figured-bass notation in music
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/figbas
+URL:		https://www.ctan.org/tex-archive/fonts/figbas
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/figbas.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/figbas.doc.r%{version}.tar.xz
